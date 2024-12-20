@@ -8,6 +8,7 @@ import AllavailableCropCard from '../pages/cropPage/AllavailbleCropCard';
 export default function AllcropProposals() {
   
   const[crops,setcrops] = useState([]);
+ 
   const navigate = useNavigate();
 
 
@@ -16,8 +17,9 @@ export default function AllcropProposals() {
     async function fetchdata() {
       try{
 
+    
         const response =  await axios.get(`${process.env.REACT_APP_BACKEND_URL}/crop/getAllavailableCrops`);
-            if(response){
+            if(response.data){
                 setcrops(response.data);
                 
             }

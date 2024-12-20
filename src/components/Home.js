@@ -11,11 +11,10 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
-    "images/cropimages/cropimage3.jpg",
-    "images/cropimages/cropimage2.jpg",
-    "images/cropimages/cropimage1.jpg",
-    "images/cropimages/cropimage4.jpg",
-    
+    "/images/cropimages/cropimage3.jpg",
+    "/images/cropimages/cropimage2.jpg",
+    "/images/cropimages/cropimage1.jpg",
+    "/images/cropimages/cropimage4.jpg",  
   ];
 
   const prevSlide = () => {

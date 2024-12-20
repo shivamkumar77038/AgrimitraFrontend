@@ -19,7 +19,7 @@ export default function Allproposals() {
       try{
 
         const response =  await axios.get(`${process.env.REACT_APP_BACKEND_URL}/retailProposal/getAllavailableProposal`);
-            if(response){
+            if(response.data){
                 setproposal(response.data);
                 
                 
