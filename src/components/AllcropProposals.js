@@ -19,8 +19,8 @@ export default function AllcropProposals() {
 
     
         const response =  await axios.get(`${process.env.REACT_APP_BACKEND_URL}/crop/getAllavailableCrops`);
-            if(response.data){
-                setcrops(response.data);
+            if (Array.isArray(response.data)) {
+              setcrops(response.data);
                 
             }
             if (response.data.length === 0 && !toast.isActive('no-proposals')) {
@@ -55,7 +55,7 @@ export default function AllcropProposals() {
     <>
      <div className='w-full min-h-screen h-auto'>
       <div className='w-full h-auto grid grid-cols-1 justify-center place-items-stretch sm:grid-cols-2 lg:grid-cols-3'>
-      {crops.map((crop) => (
+      {Array.isArray(crops) && crops.map((crop) => (
           <AllavailableCropCard crops={crop} key={crop._id} />
         ))}
       </div>
